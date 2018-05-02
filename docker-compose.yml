@@ -1,0 +1,11 @@
+version: '2'
+services:
+ metasploit:
+   build: .
+   ports:
+    - "8090:1234"
+    - "2200:22"
+   volumes:
+    - ~/.msf4:/root/.msf4
+    - /tmp/msf/:/tmp/data
+   command: /usr/local/bin/init.sh
